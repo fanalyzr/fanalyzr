@@ -132,6 +132,7 @@
     "eslint-plugin-unused-imports": "^4.1.4",
     "globals": "^16.2.0",
     "prettier": "^3.5.3",
+    "supabase": "^2.33.9",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.34.1",
     "vite": "^6.3.5",
