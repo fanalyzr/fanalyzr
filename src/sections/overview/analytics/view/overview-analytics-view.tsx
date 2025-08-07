@@ -10,6 +10,8 @@ import {
   _analyticOrderTimeline,
 } from 'src/_mock';
 
+import { useAuthContext } from 'src/auth/hooks';
+
 import { AnalyticsNews } from '../analytics-news';
 import { AnalyticsTasks } from '../analytics-tasks';
 import { AnalyticsCurrentVisits } from '../analytics-current-visits';
@@ -22,11 +24,20 @@ import { AnalyticsConversionRates } from '../analytics-conversion-rates';
 
 // ----------------------------------------------------------------------
 
+// Helper function to extract first name from display name
+function getFirstName(displayName: string): string {
+  if (!displayName) return '';
+  return displayName.trim().split(' ')[0];
+}
+
 export function OverviewAnalyticsView() {
+  const { user } = useAuthContext();
+  const firstName = getFirstName(user?.displayName || '');
+
   return (
     <DashboardContent maxWidth="xl">
       <Typography variant="h4" sx={{ mb: { xs: 3, md: 5 } }}>
-        Hi, Welcome back 👋
+        Hi, Welcome back 👋 {firstName}
       </Typography>
 
       <Grid container spacing={3}>

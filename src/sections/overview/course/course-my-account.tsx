@@ -9,12 +9,25 @@ import Typography from '@mui/material/Typography';
 import { Iconify } from 'src/components/iconify';
 import { AnimateBorder } from 'src/components/animate';
 
-import { useMockedUser } from 'src/auth/hooks';
+import { useAuthContext } from 'src/auth/hooks';
 
 // ----------------------------------------------------------------------
 
+// Helper function to get initials from display name
+function getInitials(name: string): string {
+  if (!name) return '';
+  
+  const parts = name.trim().split(' ');
+  if (parts.length === 1) {
+    return parts[0].charAt(0).toUpperCase();
+  }
+  
+  return (parts[0].charAt(0) + parts[parts.length - 1].charAt(0)).toUpperCase();
+}
+
 export function CourseMyAccount({ sx, ...other }: CardProps) {
-  const { user } = useMockedUser();
+  const { user } = useAuthContext();
+  const initials = getInitials(user?.displayName || '');
 
   const renderAvatar = () => (
     <AnimateBorder
@@ -23,8 +36,18 @@ export function CourseMyAccount({ sx, ...other }: CardProps) {
         primaryBorder: { size: 120, sx: { color: 'primary.main' } },
       }}
     >
-      <Avatar src={user?.photoURL} alt={user?.displayName} sx={{ width: 1, height: 1 }}>
-        {user?.displayName?.charAt(0).toUpperCase()}
+      <Avatar 
+        alt={user?.displayName} 
+        sx={{ 
+          width: 1, 
+          height: 1,
+          bgcolor: 'background.paper',
+          color: 'text.primary',
+          fontSize: '1.5rem',
+          fontWeight: 600
+        }}
+      >
+        {initials}
       </Avatar>
     </AnimateBorder>
   );

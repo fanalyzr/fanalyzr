@@ -70,6 +70,7 @@ export function AuthProvider({ children }: Props) {
             id: state.user?.id,
             accessToken: state.user?.access_token,
             displayName: state.user?.user_metadata.display_name,
+            email: state.user?.email,
             role: state.user?.role ?? 'admin',
           }
         : null,

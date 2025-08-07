@@ -14,7 +14,21 @@ export type AccountButtonProps = IconButtonProps & {
   displayName: string;
 };
 
+// Helper function to get initials from display name
+function getInitials(name: string): string {
+  if (!name) return '';
+  
+  const parts = name.trim().split(' ');
+  if (parts.length === 1) {
+    return parts[0].charAt(0).toUpperCase();
+  }
+  
+  return (parts[0].charAt(0) + parts[parts.length - 1].charAt(0)).toUpperCase();
+}
+
 export function AccountButton({ photoURL, displayName, sx, ...other }: AccountButtonProps) {
+  const initials = getInitials(displayName);
+
   return (
     <IconButton
       component={m.button}
@@ -32,8 +46,18 @@ export function AccountButton({ photoURL, displayName, sx, ...other }: AccountBu
           secondaryBorder: { sx: { color: 'warning.main' } },
         }}
       >
-        <Avatar src={photoURL} alt={displayName} sx={{ width: 1, height: 1 }}>
-          {displayName?.charAt(0).toUpperCase()}
+        <Avatar 
+          alt={displayName}
+          sx={{ 
+            width: 1, 
+            height: 1,
+            bgcolor: 'background.paper',
+            color: 'text.primary',
+            fontSize: '0.875rem',
+            fontWeight: 600
+          }}
+        >
+          {initials}
         </Avatar>
       </AnimateBorder>
     </IconButton>

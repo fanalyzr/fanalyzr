@@ -14,12 +14,25 @@ import { CONFIG } from 'src/global-config';
 
 import { Label } from 'src/components/label';
 
-import { useMockedUser } from 'src/auth/hooks';
+import { useAuthContext } from 'src/auth/hooks';
 
 // ----------------------------------------------------------------------
 
+// Helper function to get initials from display name
+function getInitials(name: string): string {
+  if (!name) return '';
+  
+  const parts = name.trim().split(' ');
+  if (parts.length === 1) {
+    return parts[0].charAt(0).toUpperCase();
+  }
+  
+  return (parts[0].charAt(0) + parts[parts.length - 1].charAt(0)).toUpperCase();
+}
+
 export function NavUpgrade({ sx, ...other }: BoxProps) {
-  const { user } = useMockedUser();
+  const { user } = useAuthContext();
+  const initials = getInitials(user?.displayName || '');
 
   return (
     <Box
@@ -28,8 +41,18 @@ export function NavUpgrade({ sx, ...other }: BoxProps) {
     >
       <Box sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
         <Box sx={{ position: 'relative' }}>
-          <Avatar src={user?.photoURL} alt={user?.displayName} sx={{ width: 48, height: 48 }}>
-            {user?.displayName?.charAt(0).toUpperCase()}
+          <Avatar 
+            alt={user?.displayName} 
+            sx={{ 
+              width: 48, 
+              height: 48,
+              bgcolor: 'background.paper',
+              color: 'text.primary',
+              fontSize: '1.25rem',
+              fontWeight: 600
+            }}
+          >
+            {initials}
           </Avatar>
 
           <Label

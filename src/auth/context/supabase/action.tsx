@@ -73,7 +73,11 @@ export const signUp = async ({
     password,
     options: {
       emailRedirectTo: `${window.location.origin}${paths.dashboard.root}`,
-      data: { display_name: `${firstName} ${lastName}` },
+      data: { 
+        display_name: `${firstName} ${lastName}`,
+        first_name: firstName,
+        last_name: lastName
+      },
     },
   });
 

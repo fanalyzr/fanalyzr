@@ -9,6 +9,18 @@ import ListItemText from '@mui/material/ListItemText';
 
 // ----------------------------------------------------------------------
 
+// Helper function to get initials from display name
+function getInitials(name: string): string {
+  if (!name) return '';
+  
+  const parts = name.trim().split(' ');
+  if (parts.length === 1) {
+    return parts[0].charAt(0).toUpperCase();
+  }
+  
+  return (parts[0].charAt(0) + parts[parts.length - 1].charAt(0)).toUpperCase();
+}
+
 export function ProfileCover({
   sx,
   name,
@@ -17,6 +29,7 @@ export function ProfileCover({
   avatarUrl,
   ...other
 }: BoxProps & IUserProfileCover) {
+  const initials = getInitials(name || '');
   return (
     <Box
       sx={[
@@ -47,17 +60,20 @@ export function ProfileCover({
       >
         <Avatar
           alt={name}
-          src={avatarUrl}
           sx={[
             (theme) => ({
               mx: 'auto',
               width: { xs: 64, md: 128 },
               height: { xs: 64, md: 128 },
               border: `solid 2px ${theme.vars.palette.common.white}`,
+              bgcolor: 'background.paper',
+              color: 'text.primary',
+              fontSize: { xs: '1.5rem', md: '3rem' },
+              fontWeight: 600
             }),
           ]}
         >
-          {name?.charAt(0).toUpperCase()}
+          {initials}
         </Avatar>
 
         <ListItemText
