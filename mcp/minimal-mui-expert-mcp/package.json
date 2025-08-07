@@ -3,14 +3,14 @@
   "version": "1.0.0",
   "description": "MCP Server expert for Minimal MUI React Template with Material-UI v6.5.0",
   "type": "module",
-  "main": "dist/index.js",
+  "main": "src/index.js",
   "bin": {
-    "minimal-mui-expert-mcp": "dist/index.js"
+    "minimal-mui-expert-mcp": "src/index.js"
   },
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",
-    "start": "node dist/index.js"
+    "start": "node src/index.js"
   },
   "keywords": [
     "mcp",
@@ -22,7 +22,7 @@
     "dashboard",
     "template"
   ],
-  "author": "Your Name",
+  "author": "Josh Yarber",
   "license": "MIT",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^0.5.0"
@@ -32,6 +32,6 @@
     "typescript": "^5.9.2"
   },
   "files": [
-    "dist"
+    "src"
   ]
 }
