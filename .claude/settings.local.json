@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__atlassian__getVisibleJiraProjects",
+      "mcp__atlassian__createJiraIssue"
+    ],
+    "deny": []
+  }
+}
