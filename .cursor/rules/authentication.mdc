@@ -1,0 +1,38 @@
+---
+globs: src/auth/**/*.ts,src/auth/**/*.tsx
+---
+# Authentication Patterns
+
+## Auth Provider Configuration
+- Current auth method is configured in [src/global-config.ts](mdc:src/global-config.ts) (currently Supabase)
+- Multiple auth providers supported: JWT, Supabase, Firebase, Auth0, Amplify
+- Auth provider selection logic in [src/app.tsx](mdc:src/app.tsx)
+
+## Auth Context Structure
+- Auth contexts located in [src/auth/context/](mdc:src/auth/context/) directory
+- Each provider has its own context implementation
+- Use auth hooks from [src/auth/hooks/](mdc:src/auth/hooks/) for auth operations
+
+## Authentication Flow
+- Implement proper loading states during auth operations
+- Handle auth errors gracefully with user feedback
+- Use auth guards for protected routes
+- Implement proper redirect logic after auth operations
+
+## Supabase Auth (Current)
+- Use Supabase client from [src/lib/supabase.ts](mdc:src/lib/supabase.ts)
+- Implement proper session management
+- Handle auth state changes with Supabase auth listener
+- Use Supabase RLS policies for data protection
+
+## Auth Guards
+- Use auth guards from [src/auth/guard/](mdc:src/auth/guard/) for route protection
+- Implement role-based access control where needed
+- Handle auth redirects properly
+- Show appropriate loading states during auth checks
+
+## Auth Forms
+- Use consistent auth form patterns across providers
+- Implement proper form validation with zod
+- Use MUI form components for auth inputs
+- Handle auth errors with proper user feedback

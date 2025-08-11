@@ -1,0 +1,46 @@
+---
+globs: *.ts,*.tsx,*.js,*.jsx
+---
+# Code Quality Standards
+
+## ESLint Configuration
+- Follow strict ESLint rules defined in [eslint.config.mjs](mdc:eslint.config.mjs)
+- Use TypeScript ESLint for type checking
+- Follow import sorting rules with perfectionist plugin
+- Remove unused imports automatically
+
+## Code Formatting
+- Use Prettier for consistent code formatting
+- Run `npm run fm:fix` to format code
+- Follow consistent indentation (2 spaces)
+- Use semicolons at the end of statements
+
+## Import Organization
+- Follow the import sorting rules from [eslint.config.mjs](mdc:eslint.config.mjs)
+- Group imports: external libraries, internal modules, relative imports
+- Use named imports for better tree shaking
+- Remove unused imports with `npm run lint:fix`
+
+## TypeScript Best Practices
+- Use strict TypeScript configuration from [tsconfig.json](mdc:tsconfig.json)
+- Define proper interfaces for all data structures
+- Use type guards for runtime type checking
+- Avoid `any` type, use proper typing
+
+## Naming Conventions
+- Use PascalCase for components and interfaces
+- Use camelCase for functions and variables
+- Use UPPER_SNAKE_CASE for constants
+- Use kebab-case for file names
+
+## Error Handling
+- Implement proper error boundaries
+- Use try-catch blocks for async operations
+- Provide meaningful error messages
+- Log errors appropriately for debugging
+
+## Performance Guidelines
+- Avoid unnecessary re-renders
+- Use proper dependency arrays in hooks
+- Implement code splitting for large components
+- Optimize bundle size with proper imports

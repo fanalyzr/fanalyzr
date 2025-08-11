@@ -1,0 +1,39 @@
+---
+globs: src/routes/**/*.ts,src/routes/**/*.tsx
+---
+# Routing Patterns
+
+## Route Definitions
+- All routes defined in [src/routes/paths.ts](mdc:src/routes/paths.ts)
+- Use route constants for navigation to avoid hardcoded strings
+- Follow the established route structure: auth, dashboard, pages
+
+## Route Structure
+- Auth routes: `/auth/*` for authentication pages
+- Dashboard routes: `/dashboard/*` for main application
+- Public pages: `/about`, `/contact`, `/pricing`, etc.
+- Error pages: `/error/403`, `/error/404`, `/error/500`
+
+## Navigation Patterns
+- Use `useNavigate` hook from react-router for programmatic navigation
+- Use `Link` component for declarative navigation
+- Implement proper loading states during navigation
+- Handle route transitions with proper animations
+
+## Route Guards
+- Use auth guards for protected routes
+- Implement role-based route protection
+- Handle unauthorized access with proper redirects
+- Show loading states during auth checks
+
+## Route Parameters
+- Use dynamic route parameters for detail pages
+- Implement proper parameter validation
+- Handle missing or invalid parameters gracefully
+- Use route parameters in data fetching
+
+## Layout Integration
+- Use layout components from [src/layouts/](mdc:src/layouts/) for consistent page structure
+- Implement proper layout switching based on routes
+- Use layout providers for shared state across routes
+- Handle layout-specific navigation patterns

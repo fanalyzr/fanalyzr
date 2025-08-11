@@ -1,0 +1,35 @@
+---
+alwaysApply: true
+---
+# Project Structure Guide
+
+This is a React TypeScript project built with Vite, using Material-UI (MUI) v7 and Supabase for authentication. The project follows a modular architecture with clear separation of concerns.
+
+## Key Entry Points
+- Main entry: [src/app.tsx](mdc:src/app.tsx) - Root application component with providers
+- Configuration: [src/global-config.ts](mdc:src/global-config.ts) - Global app configuration
+- Routes: [src/routes/paths.ts](mdc:src/routes/paths.ts) - Route definitions and navigation paths
+
+## Core Architecture
+- **Authentication**: Multiple auth providers (JWT, Supabase, Firebase, Auth0, Amplify) configured in [src/global-config.ts](mdc:src/global-config.ts)
+- **Theme**: MUI theme configuration in [src/theme/](mdc:src/theme/) directory
+- **Internationalization**: i18n setup in [src/locales/](mdc:src/locales/) directory
+- **Routing**: React Router with path definitions in [src/routes/](mdc:src/routes/)
+
+## Directory Structure
+- `src/components/` - Reusable UI components
+- `src/sections/` - Page-specific components and features
+- `src/pages/` - Page components organized by feature
+- `src/layouts/` - Layout components (dashboard, auth, etc.)
+- `src/auth/` - Authentication context and providers
+- `src/types/` - TypeScript type definitions
+- `src/utils/` - Utility functions
+- `src/_mock/` - Mock data for development
+- `public/assets/` - Static assets (images, icons, fonts)
+
+## Build Configuration
+- Vite configuration with TypeScript support
+- ESLint with strict rules for code quality
+- Prettier for code formatting
+- Multiple auth provider support
+- MUI v7 with emotion styling

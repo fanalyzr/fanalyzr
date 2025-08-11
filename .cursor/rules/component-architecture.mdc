@@ -1,0 +1,46 @@
+---
+globs: src/components/**/*.tsx,src/sections/**/*.tsx
+---
+# Component Architecture Patterns
+
+## Component Organization
+- Reusable components in [src/components/](mdc:src/components/) directory
+- Page-specific components in [src/sections/](mdc:src/sections/) directory
+- Layout components in [src/layouts/](mdc:src/layouts/) directory
+- Page components in [src/pages/](mdc:src/pages/) directory
+
+## Component Structure
+- Use functional components with hooks
+- Implement proper prop interfaces for all components
+- Use composition over inheritance
+- Implement proper error boundaries where needed
+
+## Component Patterns
+- **Presentational Components**: Pure UI components with props
+- **Container Components**: Components with business logic and state
+- **Layout Components**: Components that define page structure
+- **HOC Components**: Higher-order components for cross-cutting concerns
+
+## State Management
+- Use React hooks for local component state
+- Use context for shared state across components
+- Use SWR for server state management
+- Implement proper loading and error states
+
+## Component Communication
+- Use props for parent-child communication
+- Use context for cross-component state sharing
+- Use custom hooks for reusable logic
+- Implement proper event handling patterns
+
+## Performance Optimization
+- Use React.memo for expensive components
+- Implement proper dependency arrays in useEffect
+- Use useCallback and useMemo for expensive operations
+- Implement proper code splitting with lazy loading
+
+## Accessibility
+- Use semantic HTML elements
+- Implement proper ARIA attributes
+- Ensure keyboard navigation support
+- Follow WCAG guidelines for accessibility

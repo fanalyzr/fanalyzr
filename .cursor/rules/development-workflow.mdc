@@ -1,0 +1,48 @@
+---
+alwaysApply: true
+---
+# Development Workflow
+
+## Available Scripts
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run lint` - Run ESLint checks
+- `npm run lint:fix` - Fix ESLint issues automatically
+- `npm run fm:fix` - Format code with Prettier
+- `npm run fix:all` - Run both lint and format fixes
+
+## Development Environment
+- Node.js >= 20 required (see [package.json](mdc:package.json))
+- Use Yarn as package manager
+- Vite for fast development and building
+- TypeScript for type safety
+
+## Code Quality Checks
+- ESLint with strict rules from [eslint.config.mjs](mdc:eslint.config.mjs)
+- Prettier for code formatting
+- TypeScript strict mode enabled
+- Import sorting with perfectionist plugin
+
+## Build Process
+- TypeScript compilation with strict checking
+- Vite bundling with optimizations
+- Asset optimization and compression
+- Environment variable handling
+
+## Environment Configuration
+- Use environment variables for configuration
+- Supabase configuration in [src/global-config.ts](mdc:src/global-config.ts)
+- Auth provider selection via config
+- API keys and secrets via environment variables
+
+## Testing and Debugging
+- Use React DevTools for component debugging
+- Use browser dev tools for network and performance
+- Implement proper error boundaries
+- Use console logging for development debugging
+
+## Deployment
+- Build artifacts in `dist/` directory
+- Static file serving ready
+- Environment-specific configurations
+- Proper asset optimization for production

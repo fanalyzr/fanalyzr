@@ -1,0 +1,40 @@
+---
+globs: *.tsx,*.ts
+---
+# Material-UI (MUI) Component Standards
+
+## MUI v7 Usage
+- Use MUI v7 components from `@mui/material` package
+- Follow MUI design system and component patterns
+- Use emotion for custom styling when needed
+- Implement responsive design using MUI breakpoints
+
+## Theme Configuration
+- Customize theme in [src/theme/](mdc:src/theme/) directory
+- Use theme tokens for colors, spacing, and typography
+- Implement dark/light mode support
+- Use theme provider from [src/app.tsx](mdc:src/app.tsx)
+
+## Component Guidelines
+- Use MUI components as base building blocks
+- Extend MUI components using styled API when needed
+- Follow MUI accessibility guidelines
+- Use proper MUI prop types and interfaces
+
+## Styling Patterns
+- Use `sx` prop for component-specific styles
+- Use styled components for reusable styled elements
+- Use theme tokens for consistent spacing and colors
+- Implement responsive styles using MUI breakpoints
+
+## Data Display
+- Use MUI DataGrid for complex data tables
+- Use MUI Charts for data visualization
+- Implement proper loading states with MUI components
+- Use MUI icons from `@iconify/react`
+
+## Form Components
+- Use MUI form components with react-hook-form
+- Implement proper validation with zod schemas
+- Use MUI date pickers for date inputs
+- Follow MUI form design patterns
