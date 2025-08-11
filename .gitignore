@@ -35,5 +35,5 @@ build
 .vscode
 tsconfig.tsbuildinfo
 .ncurc.js
-supabase
+/supabase/
 docs
