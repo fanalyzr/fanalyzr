@@ -6,14 +6,12 @@ import { useEffect, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { toast } from 'src/components/snackbar';
-import { useSettingsContext } from 'src/components/settings';
 
 import { fallbackLng, getCurrentLang } from './locales-config';
 
 // ----------------------------------------------------------------------
 
 export function useTranslate(namespace?: Namespace) {
-  const settings = useSettingsContext();
 
   const { t, i18n } = useTranslation(namespace);
   const { t: tMessages } = useTranslation('messages');
@@ -22,9 +20,9 @@ export function useTranslate(namespace?: Namespace) {
 
   const updateDirection = useCallback(
     (lang: LangCode) => {
-      settings.setState({ direction: i18n.dir(lang) });
+      // Direction setting removed - no longer needed
     },
-    [i18n, settings]
+    []
   );
 
   const updateDayjsLocale = useCallback((lang: LangCode) => {
@@ -71,17 +69,12 @@ export function useTranslate(namespace?: Namespace) {
 
 export function useLocaleDirectionSync() {
   const { i18n, currentLang } = useTranslate();
-  const { state, setState } = useSettingsContext();
 
   const handleSync = useCallback(async () => {
-    if (state.direction !== i18n.dir(currentLang.value)) {
-      setState({ direction: i18n.dir(currentLang.value) });
-    }
-
     if (i18n.resolvedLanguage !== currentLang.value) {
       await i18n.changeLanguage(currentLang.value);
     }
-  }, [currentLang.value, i18n, setState, state.direction]);
+  }, [currentLang.value, i18n]);
 
   useEffect(() => {
     handleSync();

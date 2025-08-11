@@ -1,0 +1,54 @@
+---
+alwaysApply: false
+---
+# Atlassian MCP Integration Standards
+
+## Jira Issue Creation
+- Include the title in the "Summary" field
+- Inside the "Description" field include a User Story, Acceptance Criteria, Technical Details, anda Definition of Done
+- Story points are stored in the "Story point estimate" field
+- Priority is stored in the "Priority" field
+- Assign the Issue to the who requests Issue creation unless told otherwise
+- Use bullet lists for unordered lists and numbered lists for ordered lists
+- When creating multiple Issues, create an Epic and logically link the Issues to the Epic
+- When an Issue is created, generate technical documentation and add or update existing documentation in the Technical Documentation Confluence (https://fanalyzr.atlassian.net/wiki/spaces/FA/pages/1540742/) if applicable.
+- When an Issue is created, generate product documentation and add or update existing documentation in the Product Documentation Confluence (https://fanalyzr.atlassian.net/wiki/spaces/FA/pages/1540751/) if applicable.
+- When an Issue is created, generate user documentation and add or update existing documentation in the User Documentation Confluence (https://fanalyzr.atlassian.net/wiki/spaces/FA/pages/1540760/) if applicable.
+- When creating documentation, always add links to links to any related Confluence pages, Issues, and Epics
+
+
+## MCP Server Usage
+- Use Atlassian MCP server for Confluence and Jira operations
+- Follow established patterns for API calls and data handling
+- Implement proper error handling for MCP server responses
+- Use TypeScript interfaces for Atlassian data structures
+
+## Confluence Operations
+- Use consistent page creation patterns
+- Follow established content structure and formatting
+- Implement proper version control and change tracking
+- Use appropriate space selection and organization
+
+## Jira Operations
+- Follow established issue creation and management patterns
+- Use consistent field mapping and validation
+- Implement proper workflow transitions
+- Maintain proper issue linking and relationships
+
+## Data Handling
+- Validate all data before sending to MCP server
+- Handle API rate limits and pagination properly
+- Implement proper error recovery mechanisms
+- Use consistent data transformation patterns
+
+## Error Handling
+- Implement comprehensive error handling for MCP operations
+- Provide meaningful error messages to users
+- Log errors appropriately for debugging
+- Implement retry mechanisms for transient failures
+
+## Integration Patterns
+- Use consistent authentication and authorization patterns
+- Implement proper session management
+- Follow established security best practices
+- Use appropriate caching strategies for performance

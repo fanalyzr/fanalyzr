@@ -37,10 +37,8 @@ export function SettingsDrawer({ sx, defaultSettings }: SettingsDrawerProps) {
   // Visible options by default settings
   const visibility = {
     mode: hasKeys(defaultSettings, ['mode']),
-    contrast: hasKeys(defaultSettings, ['contrast']),
     navColor: hasKeys(defaultSettings, ['navColor']),
     fontSize: hasKeys(defaultSettings, ['fontSize']),
-    direction: hasKeys(defaultSettings, ['direction']),
     navLayout: hasKeys(defaultSettings, ['navLayout']),
     fontFamily: hasKeys(defaultSettings, ['fontFamily']),
     primaryColor: hasKeys(defaultSettings, ['primaryColor']),
@@ -116,29 +114,7 @@ export function SettingsDrawer({ sx, defaultSettings }: SettingsDrawerProps) {
     />
   );
 
-  const renderContrast = () => (
-    <BaseOption
-      label="Contrast"
-      selected={settings.state.contrast === 'hight'}
-      icon={<SvgIcon>{settingIcons.contrast}</SvgIcon>}
-      onChangeOption={() => {
-        settings.setState({
-          contrast: settings.state.contrast === 'default' ? 'hight' : 'default',
-        });
-      }}
-    />
-  );
 
-  const renderDirection = () => (
-    <BaseOption
-      label="Right to left"
-      selected={settings.state.direction === 'rtl'}
-      icon={<SvgIcon>{settingIcons.alignRight}</SvgIcon>}
-      onChangeOption={() => {
-        settings.setState({ direction: settings.state.direction === 'ltr' ? 'rtl' : 'ltr' });
-      }}
-    />
-  );
 
   const renderCompactLayout = () => (
     <BaseOption
@@ -323,8 +299,6 @@ export function SettingsDrawer({ sx, defaultSettings }: SettingsDrawerProps) {
         >
           <Box sx={{ gap: 2, display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)' }}>
             {visibility.mode && renderMode()}
-            {visibility.contrast && renderContrast()}
-            {visibility.direction && renderDirection()}
             {visibility.compactLayout && renderCompactLayout()}
           </Box>
 

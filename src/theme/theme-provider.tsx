@@ -10,7 +10,7 @@ import { useTranslate } from 'src/locales';
 import { useSettingsContext } from 'src/components/settings';
 
 import { createTheme } from './create-theme';
-import { Rtl } from './with-settings/right-to-left';
+
 
 // ----------------------------------------------------------------------
 
@@ -31,7 +31,7 @@ export function ThemeProvider({ themeOverrides, children, ...other }: ThemeProvi
   return (
     <ThemeVarsProvider disableTransitionOnChange theme={theme} {...other}>
       <CssBaseline />
-      <Rtl direction={settings.state.direction}>{children}</Rtl>
+      {children}
     </ThemeVarsProvider>
   );
 }

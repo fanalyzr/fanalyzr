@@ -15,9 +15,7 @@ export function applySettingsToComponents(settingsState?: SettingsState): {
       },
       body: {
         [`& .${cardClasses.root}`]: {
-          ...(settingsState?.contrast === 'hight' && {
-            '--card-shadow': theme.vars.customShadows.z1,
-          }),
+          // Card shadow removed with contrast setting
         },
       },
     }),
