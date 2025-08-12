@@ -33,9 +33,9 @@ const NAV_ITEMS = [
     href: `${paths.dashboard.user.account}/notifications`,
   },
   {
-    label: 'Social links',
-    icon: <Iconify width={24} icon="solar:share-bold" />,
-    href: `${paths.dashboard.user.account}/socials`,
+    label: 'Leagues',
+    icon: <Iconify width={24} icon="solar:cup-star-bold" />,
+    href: `${paths.dashboard.user.account}/leagues`,
   },
   {
     label: 'Security',

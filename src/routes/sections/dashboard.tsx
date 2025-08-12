@@ -43,10 +43,10 @@ const InvoiceEditPage = lazy(() => import('src/pages/dashboard/invoice/edit'));
 // Account
 const AccountGeneralPage = lazy(() => import('src/pages/dashboard/user/account/general'));
 const AccountBillingPage = lazy(() => import('src/pages/dashboard/user/account/billing'));
-const AccountSocialsPage = lazy(() => import('src/pages/dashboard/user/account/socials'));
 const AccountNotificationsPage = lazy(
   () => import('src/pages/dashboard/user/account/notifications')
 );
+const AccountLeaguesPage = lazy(() => import('src/pages/dashboard/user/account/leagues'));
 const AccountChangePasswordPage = lazy(
   () => import('src/pages/dashboard/user/account/change-password')
 );
@@ -125,7 +125,7 @@ export const dashboardRoutes: RouteObject[] = [
               { index: true, element: <AccountGeneralPage /> },
               { path: 'billing', element: <AccountBillingPage /> },
               { path: 'notifications', element: <AccountNotificationsPage /> },
-              { path: 'socials', element: <AccountSocialsPage /> },
+              { path: 'leagues', element: <AccountLeaguesPage /> },
               { path: 'change-password', element: <AccountChangePasswordPage /> },
             ],
           },
