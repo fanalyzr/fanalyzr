@@ -35,7 +35,5 @@ build
 .vscode
 tsconfig.tsbuildinfo
 .ncurc.js
-/supabase/
-docs
 /.project-notes/
 /rosterbater/
