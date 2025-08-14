@@ -1,0 +1,26 @@
+Issue Type: Story
+Priority: Medium
+Summary: Rename profiles table to user_profiles for better naming convention
+
+Description:
+Rename the existing profiles table to user_profiles to follow more descriptive naming conventions and improve code clarity. The current table name "profiles" is too generic and could conflict with other profile-related entities in the application.
+
+Acceptance Criteria:
+• Create database migration to rename profiles table to user_profiles
+• Update existing migration file that adds name columns to reference new table name
+• Update database trigger function handle_new_user() to reference user_profiles table
+• Ensure all INSERT and UPDATE operations target the renamed table
+• Verify that existing data remains intact during the rename operation
+• Test that user signup process continues to work with new table name
+• Confirm that profile creation triggers execute successfully
+
+Technical Details:
+The migration will rename the table using ALTER TABLE profiles RENAME TO user_profiles and update the trigger function to reference the new table name. The existing migration file 20250107000001_add_name_columns_to_profiles.sql will be updated to reference user_profiles instead of profiles.
+
+Definition of Done:
+• Migration file created and tested successfully
+• Existing migration updated to use new table name
+• Database trigger function updated and working
+• User signup process creates records in user_profiles table
+• No data loss or corruption during table rename
+• All tests pass with new table structure

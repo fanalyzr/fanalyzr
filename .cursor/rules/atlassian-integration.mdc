@@ -1,21 +1,22 @@
 ---
-alwaysApply: false
+alwaysApply: true
 ---
 # Atlassian MCP Integration Standards
 
-## Jira Issue Creation
+## Jira Issue Creation and Editing
 - Include the title in the "Summary" field
-- Inside the "Description" field include a User Story, Acceptance Criteria, Technical Details, anda Definition of Done
+- Inside the "Description" field include a User Story, Acceptance Criteria, Technical Details, and a Definition of Done
 - Story points are stored in the "Story point estimate" field
 - Priority is stored in the "Priority" field
 - Assign the Issue to the who requests Issue creation unless told otherwise
 - Use bullet lists for unordered lists and numbered lists for ordered lists
+- Use properly formatted markdown, Jira will correctly convert markdown to ADF on their end.
+- Remove any instance of "[]" or "[ ]" and use bullets instead.
 - When creating multiple Issues, create an Epic and logically link the Issues to the Epic
-- When an Issue is created, generate technical documentation and add or update existing documentation in the Technical Documentation Confluence (https://fanalyzr.atlassian.net/wiki/spaces/FA/pages/1540742/) if applicable.
-- When an Issue is created, generate product documentation and add or update existing documentation in the Product Documentation Confluence (https://fanalyzr.atlassian.net/wiki/spaces/FA/pages/1540751/) if applicable.
-- When an Issue is created, generate user documentation and add or update existing documentation in the User Documentation Confluence (https://fanalyzr.atlassian.net/wiki/spaces/FA/pages/1540760/) if applicable.
-- When creating documentation, always add links to links to any related Confluence pages, Issues, and Epics
-
+- When an Issue is created, generate a new page in Confluence for the Technical Documentation (all relevant information for software engineers, developers, systems engineers, and administrators) in this folder: https://fanalyzr.atlassian.net/wiki/spaces/FA/pages/1540742/. The title should be [IssueKey] - [Summary] - Technical Doc
+- When an Issue is created, generate a new page in Confluence for the Product Documentation (all relevant information to Product Managers/Owners and Stakeholders) in this folder: https://fanalyzr.atlassian.net/wiki/spaces/FA/pages/1540751/. The title should be [IssueKey] - [Summary] - Product Doc
+- When an Issue is created, generate a new page in Confluence for the User Documentation (only if information is relevant end-users) in this folder: https://fanalyzr.atlassian.net/wiki/spaces/FA/pages/1540760/. The title should be [IssueKey] - [Summary] - User Doc
+- When creating documentation, always add links to any related Confluence pages, Issues, and Epics
 
 ## MCP Server Usage
 - Use Atlassian MCP server for Confluence and Jira operations
@@ -50,5 +51,8 @@ alwaysApply: false
 ## Integration Patterns
 - Use consistent authentication and authorization patterns
 - Implement proper session management
+- Follow established security best practices
+- Use appropriate caching strategies for performance
+
 - Follow established security best practices
 - Use appropriate caching strategies for performance

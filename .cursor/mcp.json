@@ -1,27 +1,3 @@
 {
-  "mcpServers": {
-    "supabase": {
-      "command": "cmd",
-      "args": [
-        "/c",
-        "npx",
-        "-y",
-        "@supabase/mcp-server-supabase@latest",
-        "--read-only",
-        "--project-ref=kqablakxhquebemxhdfn"
-      ],
-      "env": {
-        "SUPABASE_ACCESS_TOKEN": "sb_publishable_UgYMvBkEd8x1DGqPSPz7Mg_JgdHC3Qs"
-      }
-    },
-    "atlassian": {
-      "command": "npx",
-      "args": ["-y", "mcp-remote", "https://mcp.atlassian.com/v1/sse"]
-    },
-    "mui-mcp": {
-      "type": "stdio",
-      "command": "npx",
-      "args": ["-y", "@mui/mcp@latest"]
-    }
-  }
+  "mcpServers": {}
 }
