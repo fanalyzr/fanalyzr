@@ -83,7 +83,7 @@ export function OverviewAppView() {
 
         <Grid size={{ xs: 12, md: 4 }}>
           <AppWidgetSummary
-            title="Total downloads"
+            title="Total uploads"
             percent={-0.1}
             total={678}
             chart={{

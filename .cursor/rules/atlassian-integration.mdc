@@ -3,6 +3,37 @@ alwaysApply: true
 ---
 # Atlassian MCP Integration Standards
 
+## Jira Branch Automation Workflow
+**CRITICAL: Always follow this workflow when working on Jira tickets**
+
+### Starting Work on a Jira Issue
+When starting work on a Jira Issue (e.g., user says they will start/pick up/work on an issue, references an Issue Key like ABC-123, or when transitioning an issue to In Progress):
+
+1. **Auto-create and checkout git branch** using naming convention `[IssueKey]-[Summary]` with spaces replaced by dashes
+2. **Retrieve Issue Summary** from Jira using Atlassian integration
+3. **Build branch name**: `IssueKey + '-' + SummaryWithSpacesReplacedByDashes`
+4. **Execute git command** (PowerShell-safe):
+   ```powershell
+   $branchName = "<IssueKey>-<Summary-with-dashes>"
+   git rev-parse --verify --quiet "$branchName" > $null
+   if ($LASTEXITCODE -eq 0) {
+     git checkout "$branchName"
+   } else {
+     git checkout -b "$branchName"
+   }
+   ```
+
+### Completing Work on a Jira Issue
+When user indicates work is complete (e.g., says work is done, close the ticket, ready to merge, or wants to complete the issue):
+
+1. **Commit all changes**: `git add .` then `git commit -m "[IssueKey] [Summary]"`
+2. **Merge to main**: `git checkout main`, `git pull origin main`, `git merge [branch-name]`
+3. **Push to remote**: `git push origin main`
+4. **Cleanup branches**: Delete local and remote feature branches
+5. **Mark Jira Issue as Done**: Transition issue to "Done" status with completion comment
+
+**This workflow is MANDATORY and must be followed for every Jira ticket.**
+
 ## Jira Issue Creation and Editing
 - Include the title in the "Summary" field
 - Inside the "Description" field include a User Story, Acceptance Criteria, Technical Details, and a Definition of Done
